@@ -33,4 +33,23 @@ public class CalculatorTest
         //Assert
         Assert.Equal(5, result);
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="a">valor 1</param>
+    /// <param name="b">valor 2</param>
+    /// <param name="esperado">valor esperado de la suma que se realizara</param>
+    [Theory]
+    [InlineData(2,5, 7)]
+    [InlineData(2,8, 10)]
+    public void Sum_dinamica(int a, int b, int esperado)
+    {
+        Calculator cal = new Calculator();
+        int result = cal.Sum(a, b);
+
+        //Assert
+        Assert.Equal(esperado, result);
+    }
+
 }
