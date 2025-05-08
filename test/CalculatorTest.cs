@@ -52,4 +52,14 @@ public class CalculatorTest
         Assert.Equal(esperado, result);
     }
 
+    [Fact(Skip = "Esta prueba deber ser omitida")]
+    public void Sum_errada()
+    {
+        Calculator cal = new Calculator();
+        int result = cal.Sum(2, 3);
+
+        //Assert
+        Assert.NotEqual(10, result);
+    }
+
 }

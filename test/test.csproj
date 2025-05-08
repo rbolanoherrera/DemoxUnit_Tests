@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../consola/consola.csproj" />
+    <ProjectReference Include="../TextManager/TextManager.csproj" />
   </ItemGroup>
 
 </Project>
