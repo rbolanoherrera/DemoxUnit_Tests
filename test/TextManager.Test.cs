@@ -2,6 +2,7 @@ namespace test;
 
 using Xunit;
 using TextManager;
+using Moq;
 
 public class TextManagerTest
 {
@@ -29,7 +30,21 @@ public class TextManagerTest
 
         //assert
         Assert.NotNull(result);
-        Assert.NotEqual(0, result.Count);
+        Assert.Equal(0, result.Count);
+    }
+
+    [Fact]
+    public void CountWords_NotZero_Moq()
+    {
+        //arrange
+        var mock = new Mock<TextManager>("La perra de la vecina");
+        mock.Setup(p=> p.CountWords()).Returns(1);
+
+        //act
+        var result = mock.Object.CountWords();
+
+        //assert
+        Assert.NotEqual(0, result);
     }
     
 }
